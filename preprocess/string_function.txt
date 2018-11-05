@@ -1,0 +1,24 @@
+def __str__(self):
+        return  "analysisSampleRate :%s\n artistDigitalID :%s\n artistFamiliarity :%s\n artistHotness :%s\n \
+                artistID :%s\n artistLatitude :%s\n artistLocation :%s\n artistLongitude :%s\n artistmbID :%s\n \
+                artistmbTags :%s\n artistmbTagsCount :%s\nartistName :%s\n artistPlayMeID :%s\nartistTerms :%s\n \
+                artistTermsFreq :%s\nartistTermsWeight :%s\naudioMD5 :%s\nbarsConfidence :%s\nbarsStart:%s\n \
+                beatsConfidence :%s\nbeatsStart :%s\ndanceability :%s\nduration :%s\nendOfFadeIn :%s\nenergy:%s\n \
+                key :%s\nkeyConfidence :%s\nloudness :%s\nmode :%s\nmodeConfidence :%s\nrelease :%s\nreleaseDigitalID:%s\n \
+                sectionsConfidence :%s\n sectionsStart :%s\nsegementsConfidence :%s\nsegmentsLoudnessMax:%s\n \
+                segmentsLoudnessMaxTime :%s\nsegmentsLoudnessMaxStart :%s\nsegmentsPitches :%s\nsegmentsStart:%s\n \
+                segmentsTimbre :%s\nsimilarArtists :%s\nsongHotttnesss :%s\nstartOfFadeOut :%s\ntatumsConfidence:%s\n \
+                tatumsStart :%s\ntempo :%s\ntimeSignature :%s\n timeSignatureConfidence :%s\ntitle :%s\ntrackID: %s\n \
+                trackDigitalID :%s\nyear :%s\nalbumName :%s\n albumID: %s\n" % (
+                    self.analysisSampleRate , self.artistDigitalID , self.artistFamiliarity , self.artistHotness  , 
+                    self.artistID , self.artistLatitude , self.artistLocation , self.artistLongitude , self.artistmbID ,
+                    self.artistmbTags , self.artistmbTagsCount_mean ,self.artistName , self.artistPlayMeID ,self.artistTerms ,
+                    self.artistTermsFreq_mean ,self.artistTermsWeight_mean ,self.audioMD5 ,self.barsConfidence_mean ,self.barsStart_mean  ,
+                    self.beatsConfidence_mean ,self.beatsStart_mean ,self.danceability ,self.duration ,self.endOfFadeIn ,self.energy ,
+                    self.key ,self.keyConfidence ,self.loudness ,self.mode ,self.modeConfidence ,self.release ,self.releaseDigitalID ,
+                    self.sectionsConfidence_mean , self.sectionsStart_mean ,self.segementsConfidence_mean ,self.segmentsLoudnessMax_mean  ,
+                    self.segmentsLoudnessMaxTime_mean ,self.segmentsLoudnessMaxStart_mean ,self.segmentsPitches ,self.segmentsStart_mean,
+                    self.segmentsTimbre ,self.similarArtists ,self.songHotttnesss ,self.startOfFadeOut ,self.tatumsConfidence_mean ,
+                    self.tatumsStart_mean ,self.tempo ,self.timeSignature ,self.timeSignatureConfidence ,self.title ,self.trackID ,
+                    self.trackDigitalID ,self.year ,self.albumName ,self.albumID
+                );
