@@ -52,7 +52,7 @@ def get_artist_familiarity(h5,songidx=0):
     """
     return h5.root.metadata.songs.cols.artist_familiarity[songidx]
 
-def get_artist_hotttnesss(h5,songidx=0):
+def get_artist_hottness(h5,songidx=0):
     """
     Get artist hotttnesss from a HDF5 song file, by default the first song in it
     """
