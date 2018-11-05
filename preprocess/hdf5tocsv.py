@@ -29,7 +29,7 @@ def main():
             song = fill_attributes(song,songH5File)
 
             #dont remove
-            row = song.convert_tostring()
+            print(song.convert_tostring())
             
             songH5File.close()
 
