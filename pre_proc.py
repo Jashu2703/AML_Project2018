@@ -3,7 +3,7 @@ import csv
 from gensim.models import Word2Vec
 from gensim.models import KeyedVectors
 from sklearn.metrics.pairwise import cosine_similarity
-
+import gensim.downloader as api
 
 with open('msd.csv', 'r') as f:
     d_reader = csv.DictReader(f)
@@ -54,10 +54,10 @@ result = model.most_similar(positive=['woman', 'king'], negative=['man'], topn=1
 print(result)'''
 
 
-import gensim.downloader as api
+
 
 word_vectors = api.load("glove-wiki-gigaword-100") 
-vector = word_vectors['hello world how do u do']
+vector = word_vectors['hello']
 print(vector)
 similarity = word_vectors.similarity('lady', 'woman')
 print(similarity)
