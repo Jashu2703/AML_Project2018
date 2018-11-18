@@ -10,9 +10,18 @@ def main():
     #directory that contain hdf5 files.
     basedir = "E://Engineering//7th_sem//AML//Project//AML_Project2018//data//MillionSongSubset//data//"     
     ext = ".H5"
+    ouputcsv = "E://Engineering//7th_sem//AML//Project//AML_Project2018//data//msd.csv"
+    count=0
+    
+    #clear contents of file
+    with open(ouputcsv,'w') as fd:
+        print("Cleared existing contents")
 
-    #dont remove
-    print(get_headers())
+    #Add headers
+    with open(ouputcsv,'a') as fd:
+        text = get_headers()
+        fd.write(text)
+        fd.write("\n")
 
     #main loop
     for root, _ , files in os.walk(basedir):        
@@ -28,9 +37,17 @@ def main():
             #fill the attrobutes in song file
             song = fill_attributes(song,songH5File)
 
-            #dont remove
-            print(song.convert_tostring())
+            #Add songs line by line
+            with open(ouputcsv,'a') as fd:
+                text = song.convert_tostring()
+                fd.write(text)
+                fd.write("\n")
             
             songH5File.close()
+
+            count = count+1
+
+    
+    print(count)
 
 main()
