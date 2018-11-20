@@ -143,7 +143,7 @@ def covert_2darray_to_meanvar(array):
     return array.mean(axis=0), array.var(axis=0)
 
 def convert_array_to_string(array):
-    return ",".join( map( str, array ) )
+    return " ".join( map( str, array ) )
 
 #given song object fills data from file
 def fill_attributes(song,songH5File):
