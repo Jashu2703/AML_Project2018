@@ -10,7 +10,7 @@ def main():
     #directory that contain hdf5 files.
     basedir = "E://Engineering//7th_sem//AML//Project//AML_Project2018//data//MillionSongSubset//data//"     
     ext = ".H5"
-    ouputcsv = "E://Engineering//7th_sem//AML//Project//AML_Project2018//data//msd.csv"
+    ouputcsv = "E://Engineering//7th_sem//AML//Project//AML_Project2018//data//msd_final.csv"
     count=0
     
     #clear contents of file
