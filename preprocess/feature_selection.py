@@ -27,7 +27,7 @@ for sh in sparse_head:
     print("Percentage for ", sh ,"is ", perc)
 print(len(headers),len(to_rem_head), len(sparse_head))
 major_head = list(set(headers) - set(to_rem_head) - set(sparse_head))
-#Removinag all rows with any NAN value
+#Removing all rows with any NAN value
 cleaned_data =  data[major_head]
 print("Cleaned data:  ",len(cleaned_data))
 for i in major_head:
@@ -43,6 +43,7 @@ cleaned_data = pandas.DataFrame(x_scaled)
 
 print(cleaned_data.shape)
 
+#Append headers for all the coulmns 
 cleaned_data = pandas.DataFrame(cleaned_data.values, columns=coulmn_names)
 print(cleaned_data)
 Y = cleaned_data['songHotttnesss']
