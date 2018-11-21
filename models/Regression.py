@@ -5,8 +5,6 @@ from sklearn.svm import SVR
 import pandas as pd 
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_squared_error, r2_score 
-import plotly.plotly as py
-import plotly.graph_objs as go
 
 def split_train_test(df): 
     train, test = train_test_split(df, test_size=0.2)
@@ -33,18 +31,9 @@ def fit_model(df, modelType):
 
 models = ['LinearRegression', 'Lasso', 'Ridge', 'SVR']
 df = pd.read_csv("../data/msd_feature_selection_normalised.csv")
-values = []
 for model in models:
     mse, r2_score = fit_model(df,model)
-    print('|    %s  |   %.4f    |   %.4f    |'%model %mse %r2_score)
-    values.append([mse,r2_score])
-    # print("Model : %s"%model)
-    # print("Mean squared error: %.2f"% mse)   
-    # print("R2 Score: %.2f"%r2_score)
-
-table = go.Table(
-    header=dict(values=['Model', 'MSE','R2_Score']),
-    cells=dict(values=values))
-
-data = [table] 
-py.iplot(data, filename = 'basic_table')
+    print("Model : %s"%model)
+    print("Mean squared error: %.2f"% mse)   
+    print("R2 Score: %.2f"%r2_score)
+    print('--------------------------------------------------------')
