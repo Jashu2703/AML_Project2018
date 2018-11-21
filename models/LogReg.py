@@ -15,28 +15,35 @@ def split_train_test(df):
 
 
 def fit_model(df):
-    train_x, train_y , test_x, test_y = split_train_test(df) #Get the split of data
-    model = LogisticRegression().fit(train_x, train_y) #Fit the model
-    y_pred = model.predict(test_x) #Predict values
-    accuracy = accuracy_score(test_y, y_pred)  #Check the accuracy
-
-    #Plotting roc 
-    probs = model.predict_proba(test_x) #Calculate probabilities
-    probs = probs[:, 1] #keep the positive class probabilities
-    #plot_roc(test_y,probs)
-    plot_confusion_matrix(test_y,y_pred)
+    train_x, train_y , test_x, test_y = split_train_test(df)    # Get the split of data
+    model = LogisticRegression().fit(train_x, train_y)          # Fit the model
+    y_pred = model.predict(test_x)                              # Predict values
+    accuracy = accuracy_score(test_y, y_pred)                   # Check the accuracy
     print("Accuracy of model: ",accuracy)
 
+    #Plotting roc 
+    probs = model.predict_proba(test_x)                         # Calculate probabilities
+    probs = probs[:, 1]                                         # keep the positive class probabilities
+    #plot_roc(test_y,probs)
+    plot_confusion_matrix(test_y,y_pred)
+    
+
 def plot_roc(test_y,probs):
-    fpr, tpr, _ = roc_curve(test_y, probs)  # calculate roc curve
-    plt.plot([0, 1], [0, 1], linestyle='--') # plot no skill
-    plt.plot(fpr, tpr, marker='.') # plot the roc curve for the model
-    plt.show() # show the plot
+    fpr, tpr, _ = roc_curve(test_y, probs)                      # calculate roc curve
+    plt.plot([0, 1], [0, 1], linestyle='--')                    # plot no skill
+    plt.plot(fpr, tpr, marker='.')                              # plot the roc curve for the model
+    plt.show()                                                  # show the plot
 
 def plot_confusion_matrix(test_y,y_pred):
-    cm = confusion_matrix(test_y,y_pred)
-    ax = plt.subplot()
+    cm = confusion_matrix(test_y,y_pred)                        #Get confusion matrix
+    ax = plt.subplot()                                          
     sns.heatmap(cm, annot=True, ax = ax)
+    # labels, title and ticks
+    ax.set_xlabel('Predicted labels')
+    ax.set_ylabel('True labels') 
+    ax.set_title('Confusion Matrix') 
+    ax.xaxis.set_ticklabels(['flop', 'hit'])
+    ax.yaxis.set_ticklabels(['flop', 'hit']);
     plt.show()
     
 df = pd.read_csv("E:/Engineering/7th_sem/AML/Project/AML_Project2018/data/cleaned_msd.csv")
